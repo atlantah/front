@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #8899cf;
+            padding-left: 23%;
+            padding-top: 12%;
+            width: 50%;
+            align-items: center;
+        }
+        .gr{
+            padding-top: 8%;
+        }
+        form {
+            background: rgba(0, 0, 0, 0.1);
+            padding-left: 30%;
+            border-radius: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 300px        
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #fff;
+        }
+        input[type="text"], input[type="email"] {
+            width: 45%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        input[type="button"] {
+            background: #042db1;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background: #3859c4;
+        }
+        input{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(0, 0, 0, 0.1);
+
+        }
+
+    </style>
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            if (name === '' || email === '') {
+                alert('All fields must contain credentials!');
+                return false; 
+            }
+            return true; 
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateForm()">
+        <div class="gr">
+            <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <input type="button" value="Submit" onclick="if (validateForm()) { alert('Form submitted!'); }">
+
+        </div>
+    </form>
+</body>
+</html>
